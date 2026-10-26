@@ -1,0 +1,8 @@
+The system manages positions, departments and employees.
+
+Each position has exactly one title, has exactly one description, and is identified by an identifier. 
+Each position also may have one or more employees. 
+Each department has exactly one location, is identified by an identifier, and has exactly one name. 
+Each department also may have one or more employees. 
+Each employee is identified by an identifier, has exactly one salary, has exactly one email, has exactly one name, and has exactly one hire date. 
+Each employee also has exactly one department and has exactly one position. 

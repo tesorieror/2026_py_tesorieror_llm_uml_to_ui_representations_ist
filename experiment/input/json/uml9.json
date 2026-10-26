@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml9",
+  "type": "object",
+  "properties": {
+	"warehouses": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Warehouse"}
+    },
+	"products": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Product"}
+    },
+	"stockmovements": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/StockMovement"}
+    },
+	"stockitems": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/StockItem"}
+    }
+  },
+  "required":["warehouses", "products", "stockmovements", "stockitems"],  
+  "$defs": {
+    "MovementType":{
+      "type":"string",
+      "enum":["Inbound", "Outbound", "Adjustment"]
+    },
+    "Warehouse":{
+      "type":"object",
+      "properties":{
+        	"name":	{ "type": "string" },
+        	"code":	{ "type": "string" },
+        	"location":	{ "type": "string" },
+        	"stockItems":{"type":"array", "items": { "$ref": "#/$defs/StockItem" } }      
+      }, 
+      "required":["name","code","location"]	  
+    },
+    "Product":{
+      "type":"object",
+      "properties":{
+        	"name":	{ "type": "string" },
+        	"stockItems":{"type":"array", "items": { "$ref": "#/$defs/StockItem" } , "minItems":1},
+        	"description":	{ "type": "string" },
+        	"price":	{ "type": "number"},
+        	"sku":	{ "type": "string" }      
+      }, 
+      "required":["name","stockItems","description","price","sku"]	  
+    },
+    "StockMovement":{
+      "type":"object",
+      "properties":{
+        	"type":{ "$ref": "#/$defs/MovementType" },
+        	"date":	{ "type": "string", "format": "date-time" },
+        	"quantity":	{ "type": "number"},
+        	"stockItem":{ "$ref": "#/$defs/StockItem" }      
+      }, 
+      "required":["type","date","quantity","stockItem"]	  
+    },
+    "StockItem":{
+      "type":"object",
+      "properties":{
+        	"warehouse":{ "$ref": "#/$defs/Warehouse" },
+        	"product":{ "$ref": "#/$defs/Product" },
+        	"quantity":	{ "type": "integer"},
+        	"minimumQuantity":	{ "type": "integer"},
+        	"stockMovements":{"type":"array", "items": { "$ref": "#/$defs/StockMovement" } }      
+      }, 
+      "required":["warehouse","product","quantity","minimumQuantity"]	  
+    } 
+  }
+}

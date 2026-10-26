@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="ReservationStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending"/>
+      <xs:enumeration value="Confirmed"/>
+      <xs:enumeration value="Cancelled"/>
+      <xs:enumeration value="Completed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RoomTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Single"/>
+      <xs:enumeration value="Double"/>
+      <xs:enumeration value="Suite"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GuestType">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="phone" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="reservations" type="ReservationType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HotelType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="rooms" type="RoomType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="address" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RoomType">
+    <xs:sequence>
+      <xs:element name="hotel" type="HotelType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="type" type="RoomTypeType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="number" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="pricePerNight" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="capacity" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="reservations" type="ReservationType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ReservationType">
+    <xs:sequence>
+      <xs:element name="room" type="RoomType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="checkIn" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="totalPrice" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="status" type="ReservationStatusType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="guest" type="GuestType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="checkOut" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

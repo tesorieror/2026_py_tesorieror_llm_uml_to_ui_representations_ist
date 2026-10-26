@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "es_uclm_iseresearch_uml_to_ui"
+version = "0.0.1"
+description = "Research code for the UML-to-Web-UI representation study"
+requires-python = ">=3.11"
+dynamic = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/es_uclm_iseresearch_uml_to_ui"]

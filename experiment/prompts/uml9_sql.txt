@@ -1,0 +1,115 @@
+Generate a CRUD-oriented Web interface from the following model representation.
+
+Requirements:
+
+* Use HTML5.
+* Use Bootstrap 5.
+* Use vanilla JavaScript only.
+* Generate a form for each entity in the model.
+* Represent every entity attribute with an appropriate HTML form control whenever the attribute is intended to be user-editable.
+* Use HTML input types that preserve the attribute type semantics whenever an appropriate HTML input type exists.
+* A textual attribute may be represented using either `input type="text"` or `textarea` when appropriate.
+* Represent enumeration attributes using `select`, radio buttons, or checkboxes as appropriate to their cardinality.
+* Preserve all enumeration literal values in the generated controls.
+* Represent associations between entities using appropriate form controls.
+- For each entity form, set the form `id` exactly to `<EntityName>_form`.
+
+- For every model attribute represented by a single form control:
+  - set the control `name` exactly to `<AttributeName>`;
+  - set the control `id` exactly to `<EntityName>_<AttributeName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches the control `id`.
+
+- When an enumeration is represented using radio buttons or checkboxes:
+  - set every control `name` exactly to `<AttributeName>`;
+  - set every control `id` exactly to `<EntityName>_<AttributeName>_<LiteralName>`;
+  - set every control `value` exactly to `<LiteralName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches that control `id`.
+
+- When an enumeration is represented using a `select` element:
+  - set the `select` `name` exactly to `<AttributeName>`;
+  - set the `select` `id` exactly to `<EntityName>_<AttributeName>`;
+  - set each option `value` exactly to its enumeration literal name.
+* Preserve entity and attribute names from the model. Do not rename them.
+* The generated HTML must be executable as a standalone Web interface.
+* Do not use external JavaScript frameworks or libraries other than Bootstrap 5.
+* Do not invent entities, attributes, enumeration literals, or associations that are not present in the supplied model representation.
+
+Output executable code only.
+
+Return:
+
+1. Exactly one complete HTML block enclosed in ```html for `index.html`.
+2. If JavaScript is needed, return at most one JavaScript block enclosed in ```javascript for `script.js`.
+3. If additional CSS is needed, return at most one CSS block enclosed in ```css for `style.css`.
+
+The HTML block is mandatory.
+JavaScript and CSS blocks are optional and should only be included when needed.
+
+If a JavaScript block is provided, the HTML must reference `script.js`.
+If a CSS block is provided, the HTML must reference `style.css`.
+
+Do not include filenames outside the code blocks.
+Do not include explanations, Markdown headings, or any other text outside the code blocks.
+
+
+
+-- Generated automatically from UML model uml9.
+-- SQL/Foundation-oriented DDL using standard delimited identifiers.
+-- UML-to-relational mapping choices are explicit transformation policies;
+-- ISO/IEC 9075 defines SQL, not a normative UML-to-SQL mapping.
+
+CREATE TABLE "product" (
+    "id" BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+  , "description" CHARACTER VARYING(255) NOT NULL
+  , "name" CHARACTER VARYING(255) NOT NULL
+  , "price" REAL NOT NULL
+  , "sku" CHARACTER VARYING(255) NOT NULL
+);
+
+CREATE TABLE "stock_movement" (
+    "id" BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+  , "quantity" REAL NOT NULL
+  , "date" TIMESTAMP NOT NULL
+  , "type" CHARACTER VARYING(255) NOT NULL CHECK ("type" IN ('Inbound', 'Outbound', 'Adjustment'))
+  , "stock_item_id" BIGINT NOT NULL
+);
+
+CREATE TABLE "stock_item" (
+    "id" BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+  , "quantity" INTEGER NOT NULL
+  , "minimum_quantity" INTEGER NOT NULL
+  , "warehouse_id" BIGINT NOT NULL
+  , "product_id" BIGINT NOT NULL
+);
+
+CREATE TABLE "warehouse" (
+    "id" BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+  , "location" CHARACTER VARYING(255) NOT NULL
+  , "name" CHARACTER VARYING(255) NOT NULL
+  , "code" CHARACTER VARYING(255) NOT NULL
+);
+
+
+-- Tables for multivalued primitive attributes
+
+-- Junction tables for many-to-many associations
+
+-- Foreign-key constraints for one-to-many and one-to-one associations
+ALTER TABLE "stock_movement"
+    ADD CONSTRAINT "fk_stock_movement_stock_item"
+    FOREIGN KEY ("stock_item_id")
+    REFERENCES "stock_item" ("id");
+
+
+ALTER TABLE "stock_item"
+    ADD CONSTRAINT "fk_stock_item_warehouse"
+    FOREIGN KEY ("warehouse_id")
+    REFERENCES "warehouse" ("id");
+
+
+ALTER TABLE "stock_item"
+    ADD CONSTRAINT "fk_stock_item_product"
+    FOREIGN KEY ("product_id")
+    REFERENCES "product" ("id");
+
+

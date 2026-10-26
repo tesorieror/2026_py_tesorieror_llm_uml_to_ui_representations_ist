@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hnx-IGu-EfG4EZpb5KR2wg" name="uml9">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_hpAtMGu-EfG4EZpb5KR2wg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jPrJAGu-EfG4EZpb5KR2wg" name="Product">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ozmEkGu-EfG4EZpb5KR2wg" name="sku">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pwDs0Gu-EfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pwLooGu-EfG4EZpb5KR2wg" name="price">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloatObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pwSWUGu-EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_j4zlkGu-EfG4EZpb5KR2wg" name="Warehouse">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0LbfgGu-EfG4EZpb5KR2wg" name="code">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1BchgGu-EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1quIAGu-EfG4EZpb5KR2wg" name="location">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lBivQGu-EfG4EZpb5KR2wg" name="StockItem">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8R4pQGu-EfG4EZpb5KR2wg" name="quantity">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9R0cQGu-EfG4EZpb5KR2wg" name="minimumQuantity">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nPqzsGu-EfG4EZpb5KR2wg" name="StockMovement">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_DkcQ4Gu_EfG4EZpb5KR2wg" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ETcr8Gu_EfG4EZpb5KR2wg" name="quantity">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloatObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FLSS4Gu_EfG4EZpb5KR2wg" name="type" type="_JvFOMGu_EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_JvFOMGu_EfG4EZpb5KR2wg" name="MovementType">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_K4GEsGu_EfG4EZpb5KR2wg" name="Inbound"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LqX2MGu_EfG4EZpb5KR2wg" name="Outbound"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MjhEsGu_EfG4EZpb5KR2wg" name="Adjustment"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fE-NsGu_EfG4EZpb5KR2wg" memberEnd="_fE_b0mu_EfG4EZpb5KR2wg _fFAp8Gu_EfG4EZpb5KR2wg" navigableOwnedEnd="_fFAp8Gu_EfG4EZpb5KR2wg _fE_b0mu_EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fE_b0Gu_EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fE_b0Wu_EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fE_b0mu_EfG4EZpb5KR2wg" name="stockItems" type="_lBivQGu-EfG4EZpb5KR2wg" association="_fE-NsGu_EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g1kooGu_EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g1kooWu_EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fFAp8Gu_EfG4EZpb5KR2wg" name="warehouse" type="_j4zlkGu-EfG4EZpb5KR2wg" association="_fE-NsGu_EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_j_e_4Gu_EfG4EZpb5KR2wg" memberEnd="_j_gOAmu_EfG4EZpb5KR2wg _j_g1EGu_EfG4EZpb5KR2wg" navigableOwnedEnd="_j_gOAmu_EfG4EZpb5KR2wg _j_g1EGu_EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j_gOAGu_EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j_gOAWu_EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_j_gOAmu_EfG4EZpb5KR2wg" name="stockItems" type="_lBivQGu-EfG4EZpb5KR2wg" association="_j_e_4Gu_EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nGMSIGu_EfG4EZpb5KR2wg" name="LiteralInteger1" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nGMSIWu_EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_j_g1EGu_EfG4EZpb5KR2wg" name="product" type="_jPrJAGu-EfG4EZpb5KR2wg" association="_j_e_4Gu_EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_sC1yUGu_EfG4EZpb5KR2wg" memberEnd="_sC3AcWu_EfG4EZpb5KR2wg _sC3ngGu_EfG4EZpb5KR2wg" navigableOwnedEnd="_sC3ngGu_EfG4EZpb5KR2wg _sC3AcWu_EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sC2ZYGu_EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sC3AcGu_EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_sC3AcWu_EfG4EZpb5KR2wg" name="stockMovements" type="_nPqzsGu-EfG4EZpb5KR2wg" association="_sC1yUGu_EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uWCkAGu_EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uWCkAWu_EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_sC3ngGu_EfG4EZpb5KR2wg" name="stockItem" type="_lBivQGu-EfG4EZpb5KR2wg" association="_sC1yUGu_EfG4EZpb5KR2wg"/>
+  </packagedElement>
+</uml:Model>

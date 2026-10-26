@@ -1,0 +1,10 @@
+The system manages comments, tasks, employees and projects.
+
+Each comment has exactly one date and has exactly one text. 
+Each comment also has exactly one task. 
+Each task has exactly one priority, has exactly one description, has exactly one title, has exactly one status, and has exactly one due date. The priority can be Low, Medium, and High. The status can be ToDo, InProgress, Done, and Blocked. 
+Each task also has exactly one project, may have one or more employees, and may have one or more comments. 
+Each employee has exactly one name, has exactly one email, and is identified by an identifier. 
+Each employee also may have one or more tasks. 
+Each project has exactly one name, may have one end date, has exactly one start date, and has exactly one description. 
+Each project also may have one or more tasks. 

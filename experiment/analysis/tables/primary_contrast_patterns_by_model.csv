@@ -1,0 +1,4 @@
+model,above_zero,below_zero,contains_zero,descriptive_only,exact_zero,not_estimable
+llama3.1:8b,12,3,9,0,4,0
+mistral:7b-instruct,12,0,8,7,0,1
+qwen2.5:7b-instruct,11,4,13,0,0,0

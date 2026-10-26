@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml1",
+  "type": "object",
+  "properties": {
+	"courses": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Course"}
+    },
+	"registrations": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Registration"}
+    },
+	"students": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Student"}
+    }
+  },
+  "required":["courses", "registrations", "students"],  
+  "$defs": {
+
+    "Course":{
+      "type":"object",
+      "properties":{
+        	"registrations":{"type":"array", "items": { "$ref": "#/$defs/Registration" } },
+        	"credits":	{ "type": "integer"},
+        	"title":	{ "type": "string" }      
+      }, 
+      "required":["credits","title"]	  
+    },
+    "Registration":{
+      "type":"object",
+      "properties":{
+        	"course":{ "$ref": "#/$defs/Course" },
+        	"student":{ "$ref": "#/$defs/Student" },
+        	"date":	{ "type": "string", "format": "date-time" }      
+      }, 
+      "required":["course","student","date"]	  
+    },
+    "Student":{
+      "type":"object",
+      "properties":{
+        	"registrations":{"type":"array", "items": { "$ref": "#/$defs/Registration" } },
+        	"email":	{ "type": "string" },
+        	"age":	{ "type": "integer"},
+        	"name":	{ "type": "string" }      
+      }, 
+      "required":["email","age","name"]	  
+    } 
+  }
+}

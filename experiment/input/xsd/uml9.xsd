@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="MovementTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inbound"/>
+      <xs:enumeration value="Outbound"/>
+      <xs:enumeration value="Adjustment"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="WarehouseType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="location" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stockItems" type="StockItemType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StockItemType">
+    <xs:sequence>
+      <xs:element name="minimumQuantity" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="product" type="ProductType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="quantity" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="warehouse" type="WarehouseType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stockMovements" type="StockMovementType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StockMovementType">
+    <xs:sequence>
+      <xs:element name="type" type="MovementTypeType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="quantity" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stockItem" type="StockItemType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stockItems" type="StockItemType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="price" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="sku" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

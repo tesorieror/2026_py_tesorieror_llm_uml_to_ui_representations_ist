@@ -1,0 +1,10 @@
+The system manages stock items, stock movements, products and warehouses.
+
+Each stock item has exactly one quantity and has exactly one minimum quantity. 
+Each stock item also has exactly one warehouse, has exactly one product, and may have one or more stock movements. 
+Each stock movement has exactly one date, has exactly one type, and has exactly one quantity. The type can be Inbound, Outbound, and Adjustment. 
+Each stock movement also has exactly one stock item. 
+Each product has exactly one sku, has exactly one name, has exactly one price, and has exactly one description. 
+Each product also has one or more stock items. 
+Each warehouse has exactly one code, has exactly one name, and has exactly one location. 
+Each warehouse also may have one or more stock items. 

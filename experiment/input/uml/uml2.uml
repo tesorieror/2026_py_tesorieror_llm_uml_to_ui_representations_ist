@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iSpt4FKVEfGL9_gPA3t4xw" name="uml2" URI="es.uclm.iseresearch.uml2ui.uml2">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_iT_KoFKVEfGL9_gPA3t4xw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_i2n9oFKVEfGL9_gPA3t4xw" name="Customer">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oOA5EFKVEfGL9_gPA3t4xw" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rUlBYFKVEfGL9_gPA3t4xw" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uwBNgFKVEfGL9_gPA3t4xw" name="vip">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_k_cEQFKVEfGL9_gPA3t4xw" name="Order">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xhLtkFKVEfGL9_gPA3t4xw" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3NjagFKVEfGL9_gPA3t4xw" name="total">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VosHQFKWEfGL9_gPA3t4xw" name="status" type="_RdrfYFKWEfGL9_gPA3t4xw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_RdrfYFKWEfGL9_gPA3t4xw" name="OrderStatus">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TR2LsFKWEfGL9_gPA3t4xw" name="Pending"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_T9LnsFKWEfGL9_gPA3t4xw" name="Paid"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_UaOwEFKWEfGL9_gPA3t4xw" name="Cancelled"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_YsCjgFKWEfGL9_gPA3t4xw" memberEnd="_YsDKklKWEfGL9_gPA3t4xw _YsDKk1KWEfGL9_gPA3t4xw" navigableOwnedEnd="_YsDKklKWEfGL9_gPA3t4xw _YsDKk1KWEfGL9_gPA3t4xw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YsDKkFKWEfGL9_gPA3t4xw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YsDKkVKWEfGL9_gPA3t4xw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_YsDKk1KWEfGL9_gPA3t4xw" name="customer" type="_i2n9oFKVEfGL9_gPA3t4xw" association="_YsCjgFKWEfGL9_gPA3t4xw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_YsDKklKWEfGL9_gPA3t4xw" name="orders" type="_k_cEQFKVEfGL9_gPA3t4xw" association="_YsCjgFKWEfGL9_gPA3t4xw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_avx84FKWEfGL9_gPA3t4xw" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_avx84VKWEfGL9_gPA3t4xw" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

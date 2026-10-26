@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml6",
+  "type": "object",
+  "properties": {
+	"reservations": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Reservation"}
+    },
+	"rooms": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Room"}
+    },
+	"hotels": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Hotel"}
+    },
+	"guests": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Guest"}
+    }
+  },
+  "required":["reservations", "rooms", "hotels", "guests"],  
+  "$defs": {
+    "RoomType":{
+      "type":"string",
+      "enum":["Single", "Double", "Suite"]
+    },
+    "ReservationStatus":{
+      "type":"string",
+      "enum":["Pending", "Confirmed", "Cancelled", "Completed"]
+    },
+    "Reservation":{
+      "type":"object",
+      "properties":{
+        	"guest":{ "$ref": "#/$defs/Guest" },
+        	"status":{ "$ref": "#/$defs/ReservationStatus" },
+        	"checkOut":	{ "type": "string", "format": "date-time" },
+        	"totalPrice":	{ "type": "number"},
+        	"checkIn":	{ "type": "string", "format": "date-time" },
+        	"room":{ "$ref": "#/$defs/Room" }      
+      }, 
+      "required":["guest","status","checkOut","totalPrice","checkIn","room"]	  
+    },
+    "Room":{
+      "type":"object",
+      "properties":{
+        	"pricePerNight":	{ "type": "number"},
+        	"type":{ "$ref": "#/$defs/RoomType" },
+        	"number":	{ "type": "integer"},
+        	"reservations":{"type":"array", "items": { "$ref": "#/$defs/Reservation" } },
+        	"capacity":	{ "type": "integer"},
+        	"hotel":{ "$ref": "#/$defs/Hotel" }      
+      }, 
+      "required":["pricePerNight","type","number","capacity","hotel"]	  
+    },
+    "Hotel":{
+      "type":"object",
+      "properties":{
+        	"address":	{ "type": "string" },
+        	"rooms":{"type":"array", "items": { "$ref": "#/$defs/Room" } , "minItems":1},
+        	"name":	{ "type": "string" }      
+      }, 
+      "required":["address","rooms","name"]	  
+    },
+    "Guest":{
+      "type":"object",
+      "properties":{
+        	"email":	{ "type": "string" },
+        	"reservations":{"type":"array", "items": { "$ref": "#/$defs/Reservation" } },
+        	"name":	{ "type": "string" },
+        	"phone":	{ "type": "string" },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["email","name","phone","id"]	  
+    } 
+  }
+}

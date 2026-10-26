@@ -1,0 +1,8 @@
+The system manages courses, registrations and students.
+
+Each course has exactly one title and has exactly one credits. 
+Each course also may have one or more registrations. 
+Each registration has exactly one date. 
+Each registration also has exactly one student and has exactly one course. 
+Each student has exactly one name, has exactly one age, and has exactly one email. 
+Each student also may have one or more registrations. 

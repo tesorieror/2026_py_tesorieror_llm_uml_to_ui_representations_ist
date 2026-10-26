@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_g1d3wGu7EfG4EZpb5KR2wg" name="uml7">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_g2qKkGu7EfG4EZpb5KR2wg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_iMWyMGu7EfG4EZpb5KR2wg" name="User">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sS8nsGu7EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tLnVEGu7EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tLuCwGu7EfG4EZpb5KR2wg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_izeckGu7EfG4EZpb5KR2wg" name="Ticket">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AleFsGu8EfG4EZpb5KR2wg" name="title">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Bt2DAGu8EfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_C3FjAGu8EfG4EZpb5KR2wg" name="creationDate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_EFUQsGu8EfG4EZpb5KR2wg" name="priority" type="_bDmxYGu8EfG4EZpb5KR2wg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_E3gioGu8EfG4EZpb5KR2wg" name="status" type="_V_zgUGu8EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mmQKoGu7EfG4EZpb5KR2wg" name="Technician">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GqyeIGu8EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_HYWHsGu8EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_HziO4Gu8EfG4EZpb5KR2wg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pctaYGu7EfG4EZpb5KR2wg" name="Comment">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OhWxwGu8EfG4EZpb5KR2wg" name="text">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PCnrwGu8EfG4EZpb5KR2wg" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_V_zgUGu8EfG4EZpb5KR2wg" name="TicketStatus">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YOovYGu8EfG4EZpb5KR2wg" name="Open"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Y9I0IGu8EfG4EZpb5KR2wg" name="InProgress"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Zuf_oGu8EfG4EZpb5KR2wg" name="Resolved"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aQZLwGu8EfG4EZpb5KR2wg" name="Closed"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_bDmxYGu8EfG4EZpb5KR2wg" name="Priority">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ce9VEGu8EfG4EZpb5KR2wg" name="Low"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_dTvA8Gu8EfG4EZpb5KR2wg" name="Medium"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eTU1sGu8EfG4EZpb5KR2wg" name="High"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fO5tIGu8EfG4EZpb5KR2wg" name="Critical"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4mg1oGu8EfG4EZpb5KR2wg" memberEnd="_4miDwmu8EfG4EZpb5KR2wg _4miq0Gu8EfG4EZpb5KR2wg" navigableOwnedEnd="_4miDwmu8EfG4EZpb5KR2wg _4miq0Gu8EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4miDwGu8EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4miDwWu8EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_4miDwmu8EfG4EZpb5KR2wg" name="tickets" type="_izeckGu7EfG4EZpb5KR2wg" association="_4mg1oGu8EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8ludMGu8EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8ludMWu8EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_4miq0Gu8EfG4EZpb5KR2wg" name="user" type="_iMWyMGu7EfG4EZpb5KR2wg" association="_4mg1oGu8EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-hfmUGu8EfG4EZpb5KR2wg" memberEnd="_-hg0cmu8EfG4EZpb5KR2wg _-hhbgGu8EfG4EZpb5KR2wg" navigableOwnedEnd="_-hg0cmu8EfG4EZpb5KR2wg _-hhbgGu8EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-hg0cGu8EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-hg0cWu8EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-hg0cmu8EfG4EZpb5KR2wg" name="tickets" type="_izeckGu7EfG4EZpb5KR2wg" association="_-hfmUGu8EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AqNmUGu9EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AqNmUWu9EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-hhbgGu8EfG4EZpb5KR2wg" name="technician" type="_mmQKoGu7EfG4EZpb5KR2wg" association="_-hfmUGu8EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JxsvQGu9EfG4EZpb5KR2wg" memberEnd="_Jxt9YWu9EfG4EZpb5KR2wg _JxukcGu9EfG4EZpb5KR2wg" navigableOwnedEnd="_JxukcGu9EfG4EZpb5KR2wg _Jxt9YWu9EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JxtWUGu9EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jxt9YGu9EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Jxt9YWu9EfG4EZpb5KR2wg" name="comments" type="_pctaYGu7EfG4EZpb5KR2wg" association="_JxsvQGu9EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LDNacGu9EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LDOBgGu9EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JxukcGu9EfG4EZpb5KR2wg" name="ticket" type="_izeckGu7EfG4EZpb5KR2wg" association="_JxsvQGu9EfG4EZpb5KR2wg"/>
+  </packagedElement>
+</uml:Model>

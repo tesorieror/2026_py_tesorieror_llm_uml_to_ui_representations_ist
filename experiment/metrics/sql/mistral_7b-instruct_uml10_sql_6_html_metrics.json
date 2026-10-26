@@ -1,0 +1,23 @@
+{
+  "html_filename": "experiment\\extracted_code\\mistral_7b-instruct_uml10_sql_6\\index.html",
+  "is_html_filename": true,
+  "n_html_forms": 4,
+  "n_html_buttons": 0,
+  "n_html_inputs": 19,
+  "n_html_input_button": 0,
+  "n_html_input_submit": 0,
+  "n_html_input_checkbox": 0,
+  "n_html_input_date": 4,
+  "n_html_input_datetime_local": 4,
+  "n_html_input_email": 1,
+  "n_html_input_password": 0,
+  "n_html_input_number": 0,
+  "n_html_input_reset": 0,
+  "n_html_input_radio": 7,
+  "n_html_input_range": 0,
+  "n_html_input_text": 4,
+  "n_html_label": 26,
+  "n_html_select": 2,
+  "n_html_option": 0,
+  "n_html_table": 0
+}

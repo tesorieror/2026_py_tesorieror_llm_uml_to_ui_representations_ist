@@ -1,0 +1,8 @@
+outcome,above_zero,below_zero,contains_zero,descriptive_only,exact_zero,not_estimable
+attribute_coverage,8,0,4,0,0,0
+primitive_type_fidelity,0,7,5,0,0,0
+enumeration_literal_coverage,7,0,5,0,0,0
+enumeration_cardinality_fidelity,6,0,0,4,2,0
+attribute_nonempty_label_coverage,4,0,8,0,0,0
+association_end_coverage,7,0,5,0,0,0
+association_cardinality_fidelity,3,0,3,3,2,1

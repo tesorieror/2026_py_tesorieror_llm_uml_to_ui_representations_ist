@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml7",
+  "type": "object",
+  "properties": {
+	"comments": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Comment"}
+    },
+	"tickets": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Ticket"}
+    },
+	"users": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/User"}
+    },
+	"technicians": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Technician"}
+    }
+  },
+  "required":["comments", "tickets", "users", "technicians"],  
+  "$defs": {
+    "Priority":{
+      "type":"string",
+      "enum":["Low", "Medium", "High", "Critical"]
+    },
+    "TicketStatus":{
+      "type":"string",
+      "enum":["Open", "InProgress", "Resolved", "Closed"]
+    },
+    "Comment":{
+      "type":"object",
+      "properties":{
+        	"text":	{ "type": "string" },
+        	"date":	{ "type": "string", "format": "date-time" },
+        	"ticket":{ "$ref": "#/$defs/Ticket" }      
+      }, 
+      "required":["text","date","ticket"]	  
+    },
+    "Ticket":{
+      "type":"object",
+      "properties":{
+        	"status":{ "$ref": "#/$defs/TicketStatus" },
+        	"user":{ "$ref": "#/$defs/User" },
+        	"creationDate":	{ "type": "string", "format": "date-time" },
+        	"description":	{ "type": "string" },
+        	"title":	{ "type": "string" },
+        	"priority":{ "$ref": "#/$defs/Priority" },
+        	"comments":{"type":"array", "items": { "$ref": "#/$defs/Comment" } },
+        	"technician":{ "$ref": "#/$defs/Technician" }      
+      }, 
+      "required":["status","user","creationDate","description","title","priority","technician"]	  
+    },
+    "User":{
+      "type":"object",
+      "properties":{
+        	"tickets":{"type":"array", "items": { "$ref": "#/$defs/Ticket" } },
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["name","email","id"]	  
+    },
+    "Technician":{
+      "type":"object",
+      "properties":{
+        	"id":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"tickets":{"type":"array", "items": { "$ref": "#/$defs/Ticket" } }      
+      }, 
+      "required":["id","name","email"]	  
+    } 
+  }
+}

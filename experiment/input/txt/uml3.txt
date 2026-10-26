@@ -1,0 +1,10 @@
+The system manages lines, products, invoices and customers.
+
+Each line has exactly one subtotal price, has exactly one total, has exactly one unit price, has exactly one description, has exactly one quantity, and has exactly one vat. 
+Each line also has exactly one invoice and has exactly one product. 
+Each product has exactly one description and has exactly one price. 
+Each product also may have one or more lines. 
+Each invoice has exactly one number, has exactly one vat, has exactly one subtotal, has exactly one date, has exactly one address, has exactly one name, and has exactly one total. 
+Each invoice also has one or more lines and has exactly one customer. 
+Each customer has exactly one name, has one or more addresses, has exactly one mobile, has exactly one password, has exactly one email, and is identified by an identifier. 
+Each customer also may have one or more invoices. 

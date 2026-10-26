@@ -1,0 +1,11 @@
+artifact,path,rows,columns
+primary_contrasts,experiment\analysis\results\cell_level_bayesian_bootstrap\primary_contrasts.csv,84,27
+primary_element_weighted,experiment\analysis\tables\primary_element_weighted_contrasts.csv,84,17
+model_weighted_sensitivity,experiment\analysis\tables\sensitivity_model_weighted_contrasts.csv,84,17
+primary_results_table,experiment\analysis\tables\primary_results_table.csv,21,6
+primary_results_support,experiment\analysis\tables\primary_results_support.csv,21,6
+leave_one_uml_out_summary,experiment\analysis\tables\leave_one_uml_out_summary.csv,76,9
+generation_marginal_probabilities,experiment\analysis\results\generation_success_beta_binomial\marginal_probabilities.csv,15,9
+generation_primary_contrasts,experiment\analysis\results\generation_success_beta_binomial\primary_contrasts.csv,12,9
+generation_results_table,experiment\analysis\tables\generation_success_results_table.csv,3,6
+secondary_association_cardinality_evaluability,experiment\analysis\results\secondary\association_cardinality_evaluability\contrasts.csv,12,27

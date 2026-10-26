@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_chRz0Gu9EfG4EZpb5KR2wg" name="uml8">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_cic4gGu9EfG4EZpb5KR2wg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_magiwGu9EfG4EZpb5KR2wg" name="Employee">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qSWXAGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rKsUQGu9EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rN_f4Gu9EfG4EZpb5KR2wg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_s9qtwGu9EfG4EZpb5KR2wg" name="salary">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloatObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_t4qWYGu9EfG4EZpb5KR2wg" name="hireDate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nQqHoGu9EfG4EZpb5KR2wg" name="Department">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1lVuMGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2VSkcGu9EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3CeakGu9EfG4EZpb5KR2wg" name="location">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oEle8Gu9EfG4EZpb5KR2wg" name="Position">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_7GtFAGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_74Ih8Gu9EfG4EZpb5KR2wg" name="title">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8lCrQGu9EfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KA2wIGu-EfG4EZpb5KR2wg" memberEnd="_KA4lUGu-EfG4EZpb5KR2wg _KA5MYGu-EfG4EZpb5KR2wg" navigableOwnedEnd="_KA5MYGu-EfG4EZpb5KR2wg _KA4lUGu-EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KA3-QGu-EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KA3-QWu-EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KA4lUGu-EfG4EZpb5KR2wg" name="employees" type="_magiwGu9EfG4EZpb5KR2wg" association="_KA2wIGu-EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MwgNQGu-EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mwg0UGu-EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KA5MYGu-EfG4EZpb5KR2wg" name="department" type="_nQqHoGu9EfG4EZpb5KR2wg" association="_KA2wIGu-EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PQVFsGu-EfG4EZpb5KR2wg" memberEnd="_PQVswmu-EfG4EZpb5KR2wg _PQWT0Gu-EfG4EZpb5KR2wg" navigableOwnedEnd="_PQVswmu-EfG4EZpb5KR2wg _PQWT0Gu-EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PQVswGu-EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PQVswWu-EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQVswmu-EfG4EZpb5KR2wg" name="position" type="_oEle8Gu9EfG4EZpb5KR2wg" association="_PQVFsGu-EfG4EZpb5KR2wg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQWT0Gu-EfG4EZpb5KR2wg" name="employees" type="_magiwGu9EfG4EZpb5KR2wg" association="_PQVFsGu-EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UQZGQGu-EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UQZGQWu-EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

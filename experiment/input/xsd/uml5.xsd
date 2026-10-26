@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="AppointmentStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scheduled"/>
+      <xs:enumeration value="Completed"/>
+      <xs:enumeration value="Cancelled"/>
+      <xs:enumeration value="NoShow"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AppointmentType">
+    <xs:sequence>
+      <xs:element name="status" type="AppointmentStatusType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="patient" type="PatientType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="doctor" type="DoctorType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="reason" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MedicalCenterType">
+    <xs:sequence>
+      <xs:element name="doctors" type="DoctorType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="address" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DoctorType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="appointments" type="AppointmentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="specialty" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="medicalCenter" type="MedicalCenterType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PatientType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="appointments" type="AppointmentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="phone" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="birthDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

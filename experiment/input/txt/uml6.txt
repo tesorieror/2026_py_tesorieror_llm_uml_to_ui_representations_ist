@@ -1,0 +1,10 @@
+The system manages reservations, guests, rooms and hotels.
+
+Each reservation has exactly one total price, has exactly one status, has exactly one check in, and has exactly one check out. The status can be Pending, Confirmed, Cancelled, and Completed. 
+Each reservation also has exactly one guest and has exactly one room. 
+Each guest is identified by an identifier, has exactly one email, has exactly one phone, and has exactly one name. 
+Each guest also may have one or more reservations. 
+Each room has exactly one capacity, has exactly one number, has exactly one type, and has exactly one price per night. The type can be Single, Double, and Suite. 
+Each room also has exactly one hotel and may have one or more reservations. 
+Each hotel has exactly one name and has exactly one address. 
+Each hotel also has one or more rooms. 

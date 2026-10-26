@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="PriorityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Low"/>
+      <xs:enumeration value="Medium"/>
+      <xs:enumeration value="High"/>
+      <xs:enumeration value="Critical"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TicketStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open"/>
+      <xs:enumeration value="InProgress"/>
+      <xs:enumeration value="Resolved"/>
+      <xs:enumeration value="Closed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="UserType">
+    <xs:sequence>
+      <xs:element name="tickets" type="TicketType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CommentType">
+    <xs:sequence>
+      <xs:element name="date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="text" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ticket" type="TicketType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TicketType">
+    <xs:sequence>
+      <xs:element name="creationDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="user" type="UserType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="comments" type="CommentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="status" type="TicketStatusType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="technician" type="TechnicianType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="priority" type="PriorityType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TechnicianType">
+    <xs:sequence>
+      <xs:element name="tickets" type="TicketType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

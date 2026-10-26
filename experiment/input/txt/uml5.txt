@@ -1,0 +1,10 @@
+The system manages medical centers, appointments, doctors and patients.
+
+Each medical center has exactly one name and has exactly one address. 
+Each medical center also may have one or more doctors. 
+Each appointment has exactly one reason, has exactly one status, and has exactly one date time. The status can be Scheduled, Completed, Cancelled, and NoShow. 
+Each appointment also has exactly one patient and has exactly one doctor. 
+Each doctor has exactly one specialty, is identified by an identifier, and has exactly one name. 
+Each doctor also may have one or more appointments and has exactly one medical center. 
+Each patient is identified by an identifier, has exactly one phone, has exactly one birth date, has exactly one name, and has exactly one email. 
+Each patient also may have one or more appointments. 

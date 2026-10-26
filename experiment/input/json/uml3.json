@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml3",
+  "type": "object",
+  "properties": {
+	"lines": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Line"}
+    },
+	"products": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Product"}
+    },
+	"customers": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Customer"}
+    },
+	"invoices": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Invoice"}
+    }
+  },
+  "required":["lines", "products", "customers", "invoices"],  
+  "$defs": {
+
+    "Line":{
+      "type":"object",
+      "properties":{
+        	"unitPrice":	{ "type": "number"},
+        	"vat":	{ "type": "number"},
+        	"subtotalPrice":	{ "type": "number"},
+        	"description":	{ "type": "string" },
+        	"quantity":	{ "type": "number"},
+        	"invoice":{ "$ref": "#/$defs/Invoice" },
+        	"total":	{ "type": "number"},
+        	"product":{ "$ref": "#/$defs/Product" }      
+      }, 
+      "required":["unitPrice","vat","subtotalPrice","description","quantity","invoice","total","product"]	  
+    },
+    "Product":{
+      "type":"object",
+      "properties":{
+        	"price":	{ "type": "number"},
+        	"lines":{"type":"array", "items": { "$ref": "#/$defs/Line" } },
+        	"description":	{ "type": "string" }      
+      }, 
+      "required":["price","description"]	  
+    },
+    "Customer":{
+      "type":"object",
+      "properties":{
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"password":	{ "type": "string" },
+        	"addresses":{"type":"array", "items": 	{ "type": "string" } , "minItems":1},
+        	"id":	{ "type": "string" },
+        	"mobile":	{ "type": "string" },
+        	"invoices":{"type":"array", "items": { "$ref": "#/$defs/Invoice" } }      
+      }, 
+      "required":["name","email","password","addresses","id","mobile"]	  
+    },
+    "Invoice":{
+      "type":"object",
+      "properties":{
+        	"lines":{"type":"array", "items": { "$ref": "#/$defs/Line" } , "minItems":1},
+        	"vat":	{ "type": "number"},
+        	"total":	{ "type": "number"},
+        	"address":	{ "type": "string" },
+        	"date":	{ "type": "string", "format": "date-time" },
+        	"subtotal":	{ "type": "number"},
+        	"number":	{ "type": "integer"},
+        	"name":	{ "type": "string" },
+        	"customer":{ "$ref": "#/$defs/Customer" }      
+      }, 
+      "required":["lines","vat","total","address","date","subtotal","number","name","customer"]	  
+    } 
+  }
+}

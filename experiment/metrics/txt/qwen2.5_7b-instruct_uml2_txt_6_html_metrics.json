@@ -1,0 +1,23 @@
+{
+  "html_filename": "experiment\\extracted_code\\qwen2.5_7b-instruct_uml2_txt_6\\index.html",
+  "is_html_filename": true,
+  "n_html_forms": 2,
+  "n_html_buttons": 0,
+  "n_html_inputs": 9,
+  "n_html_input_button": 0,
+  "n_html_input_submit": 0,
+  "n_html_input_checkbox": 1,
+  "n_html_input_date": 1,
+  "n_html_input_datetime_local": 0,
+  "n_html_input_email": 0,
+  "n_html_input_password": 0,
+  "n_html_input_number": 1,
+  "n_html_input_reset": 0,
+  "n_html_input_radio": 3,
+  "n_html_input_range": 0,
+  "n_html_input_text": 3,
+  "n_html_label": 9,
+  "n_html_select": 0,
+  "n_html_option": 0,
+  "n_html_table": 0
+}

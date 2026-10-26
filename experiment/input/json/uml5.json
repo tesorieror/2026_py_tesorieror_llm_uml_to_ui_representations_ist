@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml5",
+  "type": "object",
+  "properties": {
+	"appointments": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Appointment"}
+    },
+	"medicalcenters": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/MedicalCenter"}
+    },
+	"patients": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Patient"}
+    },
+	"doctors": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Doctor"}
+    }
+  },
+  "required":["appointments", "medicalcenters", "patients", "doctors"],  
+  "$defs": {
+    "AppointmentStatus":{
+      "type":"string",
+      "enum":["Scheduled", "Completed", "Cancelled", "NoShow"]
+    },
+    "Appointment":{
+      "type":"object",
+      "properties":{
+        	"doctor":{ "$ref": "#/$defs/Doctor" },
+        	"status":{ "$ref": "#/$defs/AppointmentStatus" },
+        	"patient":{ "$ref": "#/$defs/Patient" },
+        	"reason":	{ "type": "string" },
+        	"dateTime":	{ "type": "string", "format": "date-time" }      
+      }, 
+      "required":["doctor","status","patient","reason","dateTime"]	  
+    },
+    "MedicalCenter":{
+      "type":"object",
+      "properties":{
+        	"doctors":{"type":"array", "items": { "$ref": "#/$defs/Doctor" } },
+        	"name":	{ "type": "string" },
+        	"address":	{ "type": "string" }      
+      }, 
+      "required":["name","address"]	  
+    },
+    "Patient":{
+      "type":"object",
+      "properties":{
+        	"phone":	{ "type": "string" },
+        	"appointments":{"type":"array", "items": { "$ref": "#/$defs/Appointment" } },
+        	"email":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"birthDate":	{ "type": "string", "format": "date-time" },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["phone","email","name","birthDate","id"]	  
+    },
+    "Doctor":{
+      "type":"object",
+      "properties":{
+        	"id":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"specialty":	{ "type": "string" },
+        	"appointments":{"type":"array", "items": { "$ref": "#/$defs/Appointment" } },
+        	"medicalCenter":{ "$ref": "#/$defs/MedicalCenter" }      
+      }, 
+      "required":["id","name","specialty","medicalCenter"]	  
+    } 
+  }
+}

@@ -1,0 +1,10 @@
+The system manages tickets, comments, users and technicians.
+
+Each ticket has exactly one title, has exactly one description, has exactly one creation date, has exactly one status, and has exactly one priority. The status can be Open, InProgress, Resolved, and Closed. The priority can be Low, Medium, High, and Critical. 
+Each ticket also has exactly one user, has exactly one technician, and may have one or more comments. 
+Each comment has exactly one date and has exactly one text. 
+Each comment also has exactly one ticket. 
+Each user is identified by an identifier, has exactly one email, and has exactly one name. 
+Each user also may have one or more tickets. 
+Each technician has exactly one name, is identified by an identifier, and has exactly one email. 
+Each technician also may have one or more tickets. 

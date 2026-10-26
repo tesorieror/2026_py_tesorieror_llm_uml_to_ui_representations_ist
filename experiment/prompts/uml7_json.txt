@@ -1,0 +1,132 @@
+Generate a CRUD-oriented Web interface from the following model representation.
+
+Requirements:
+
+* Use HTML5.
+* Use Bootstrap 5.
+* Use vanilla JavaScript only.
+* Generate a form for each entity in the model.
+* Represent every entity attribute with an appropriate HTML form control whenever the attribute is intended to be user-editable.
+* Use HTML input types that preserve the attribute type semantics whenever an appropriate HTML input type exists.
+* A textual attribute may be represented using either `input type="text"` or `textarea` when appropriate.
+* Represent enumeration attributes using `select`, radio buttons, or checkboxes as appropriate to their cardinality.
+* Preserve all enumeration literal values in the generated controls.
+* Represent associations between entities using appropriate form controls.
+- For each entity form, set the form `id` exactly to `<EntityName>_form`.
+
+- For every model attribute represented by a single form control:
+  - set the control `name` exactly to `<AttributeName>`;
+  - set the control `id` exactly to `<EntityName>_<AttributeName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches the control `id`.
+
+- When an enumeration is represented using radio buttons or checkboxes:
+  - set every control `name` exactly to `<AttributeName>`;
+  - set every control `id` exactly to `<EntityName>_<AttributeName>_<LiteralName>`;
+  - set every control `value` exactly to `<LiteralName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches that control `id`.
+
+- When an enumeration is represented using a `select` element:
+  - set the `select` `name` exactly to `<AttributeName>`;
+  - set the `select` `id` exactly to `<EntityName>_<AttributeName>`;
+  - set each option `value` exactly to its enumeration literal name.
+* Preserve entity and attribute names from the model. Do not rename them.
+* The generated HTML must be executable as a standalone Web interface.
+* Do not use external JavaScript frameworks or libraries other than Bootstrap 5.
+* Do not invent entities, attributes, enumeration literals, or associations that are not present in the supplied model representation.
+
+Output executable code only.
+
+Return:
+
+1. Exactly one complete HTML block enclosed in ```html for `index.html`.
+2. If JavaScript is needed, return at most one JavaScript block enclosed in ```javascript for `script.js`.
+3. If additional CSS is needed, return at most one CSS block enclosed in ```css for `style.css`.
+
+The HTML block is mandatory.
+JavaScript and CSS blocks are optional and should only be included when needed.
+
+If a JavaScript block is provided, the HTML must reference `script.js`.
+If a CSS block is provided, the HTML must reference `style.css`.
+
+Do not include filenames outside the code blocks.
+Do not include explanations, Markdown headings, or any other text outside the code blocks.
+
+
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml7",
+  "type": "object",
+  "properties": {
+	"comments": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Comment"}
+    },
+	"tickets": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Ticket"}
+    },
+	"users": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/User"}
+    },
+	"technicians": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Technician"}
+    }
+  },
+  "required":["comments", "tickets", "users", "technicians"],  
+  "$defs": {
+    "Priority":{
+      "type":"string",
+      "enum":["Low", "Medium", "High", "Critical"]
+    },
+    "TicketStatus":{
+      "type":"string",
+      "enum":["Open", "InProgress", "Resolved", "Closed"]
+    },
+    "Comment":{
+      "type":"object",
+      "properties":{
+        	"text":	{ "type": "string" },
+        	"date":	{ "type": "string", "format": "date-time" },
+        	"ticket":{ "$ref": "#/$defs/Ticket" }      
+      }, 
+      "required":["text","date","ticket"]	  
+    },
+    "Ticket":{
+      "type":"object",
+      "properties":{
+        	"status":{ "$ref": "#/$defs/TicketStatus" },
+        	"user":{ "$ref": "#/$defs/User" },
+        	"creationDate":	{ "type": "string", "format": "date-time" },
+        	"description":	{ "type": "string" },
+        	"title":	{ "type": "string" },
+        	"priority":{ "$ref": "#/$defs/Priority" },
+        	"comments":{"type":"array", "items": { "$ref": "#/$defs/Comment" } },
+        	"technician":{ "$ref": "#/$defs/Technician" }      
+      }, 
+      "required":["status","user","creationDate","description","title","priority","technician"]	  
+    },
+    "User":{
+      "type":"object",
+      "properties":{
+        	"tickets":{"type":"array", "items": { "$ref": "#/$defs/Ticket" } },
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["name","email","id"]	  
+    },
+    "Technician":{
+      "type":"object",
+      "properties":{
+        	"id":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"tickets":{"type":"array", "items": { "$ref": "#/$defs/Ticket" } }      
+      }, 
+      "required":["id","name","email"]	  
+    } 
+  }
+}

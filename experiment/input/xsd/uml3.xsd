@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="lines" type="LineType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="price" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CustomerType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="password" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="invoices" type="InvoiceType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="addresses" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="mobile" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LineType">
+    <xs:sequence>
+      <xs:element name="subtotalPrice" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="vat" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="total" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="invoice" type="InvoiceType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="product" type="ProductType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="quantity" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="unitPrice" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InvoiceType">
+    <xs:sequence>
+      <xs:element name="date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="lines" type="LineType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="total" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="vat" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="subtotal" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="address" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="number" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="customer" type="CustomerType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

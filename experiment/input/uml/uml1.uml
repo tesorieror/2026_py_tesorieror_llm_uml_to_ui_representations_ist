@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wA9tcFKUEfGL9_gPA3t4xw" name="uml1" URI="es.uclm.iseresearch.uml2ui.uml1">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_wDA74FKUEfGL9_gPA3t4xw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xBt_0FKUEfGL9_gPA3t4xw" name="Student">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zuHUoFKUEfGL9_gPA3t4xw" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4R5B0FKUEfGL9_gPA3t4xw" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9ZkGQFKUEfGL9_gPA3t4xw" name="age">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yIbJMFKUEfGL9_gPA3t4xw" name="Course">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BFiBsFKVEfGL9_gPA3t4xw" name="title">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_D56N0FKVEfGL9_gPA3t4xw" name="credits">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7OBLwGuuEfG4EZpb5KR2wg" name="Registration">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BAUhkGuvEfG4EZpb5KR2wg" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DuK_oIsDEfGuc_A9bbukHw" memberEnd="_DuNb4IsDEfGuc_A9bbukHw _DuNb4YsDEfGuc_A9bbukHw" navigableOwnedEnd="_DuNb4IsDEfGuc_A9bbukHw _DuNb4YsDEfGuc_A9bbukHw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DuM00IsDEfGuc_A9bbukHw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DuM00YsDEfGuc_A9bbukHw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DuNb4IsDEfGuc_A9bbukHw" name="registrations" type="_7OBLwGuuEfG4EZpb5KR2wg" association="_DuK_oIsDEfGuc_A9bbukHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ICvMIIsDEfGuc_A9bbukHw" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ICxBUIsDEfGuc_A9bbukHw" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DuNb4YsDEfGuc_A9bbukHw" name="student" type="_xBt_0FKUEfGL9_gPA3t4xw" association="_DuK_oIsDEfGuc_A9bbukHw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Jad0EIsDEfGuc_A9bbukHw" memberEnd="_Jad0E4sDEfGuc_A9bbukHw _JaebIIsDEfGuc_A9bbukHw" navigableOwnedEnd="_JaebIIsDEfGuc_A9bbukHw _Jad0E4sDEfGuc_A9bbukHw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jad0EYsDEfGuc_A9bbukHw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jad0EosDEfGuc_A9bbukHw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Jad0E4sDEfGuc_A9bbukHw" name="course" type="_yIbJMFKUEfGL9_gPA3t4xw" association="_Jad0EIsDEfGuc_A9bbukHw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JaebIIsDEfGuc_A9bbukHw" name="registrations" type="_7OBLwGuuEfG4EZpb5KR2wg" association="_Jad0EIsDEfGuc_A9bbukHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OpcaYIsDEfGuc_A9bbukHw" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OpcaYYsDEfGuc_A9bbukHw" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml2",
+  "type": "object",
+  "properties": {
+	"orders": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Order"}
+    },
+	"customers": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Customer"}
+    }
+  },
+  "required":["orders", "customers"],  
+  "$defs": {
+    "OrderStatus":{
+      "type":"string",
+      "enum":["Pending", "Paid", "Cancelled"]
+    },
+    "Order":{
+      "type":"object",
+      "properties":{
+        	"customer":{ "$ref": "#/$defs/Customer" },
+        	"status":{ "$ref": "#/$defs/OrderStatus" },
+        	"total":	{ "type": "number"},
+        	"date":	{ "type": "string", "format": "date-time" }      
+      }, 
+      "required":["customer","status","total","date"]	  
+    },
+    "Customer":{
+      "type":"object",
+      "properties":{
+        	"orders":{"type":"array", "items": { "$ref": "#/$defs/Order" } },
+        	"name":	{ "type": "string" },
+        	"vip":	{ "type": "boolean"},
+        	"id":	{ "type": "integer"}      
+      }, 
+      "required":["name","vip","id"]	  
+    } 
+  }
+}

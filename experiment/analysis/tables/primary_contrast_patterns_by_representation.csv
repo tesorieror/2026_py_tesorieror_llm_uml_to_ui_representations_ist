@@ -1,0 +1,5 @@
+comparison,above_zero,below_zero,contains_zero,descriptive_only,exact_zero,not_estimable
+json,8,2,7,2,2,0
+xsd,9,2,8,1,0,1
+sql,10,2,7,2,0,0
+txt,8,1,8,2,2,0

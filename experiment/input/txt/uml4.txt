@@ -1,0 +1,10 @@
+The system manages loans, publishers, books and members.
+
+Each loan has exactly one due date, has exactly one status, has exactly one start date, and has exactly one return date. The status can be Active, Returned, and Overdue. 
+Each loan also has exactly one member and has exactly one book. 
+Each publisher has exactly one country and has exactly one name. 
+Each publisher also may have one or more books. 
+Each book has exactly one isbn, has exactly one year, has exactly one author, has exactly one title, and may have one or more categories. 
+Each book also may have one or more loans and has exactly one publisher. 
+Each member is identified by an identifier, defines whether the member is active, has exactly one email, and has exactly one name. 
+Each member also may have one or more loans. 

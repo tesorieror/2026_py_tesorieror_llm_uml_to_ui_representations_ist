@@ -1,0 +1,120 @@
+Generate a CRUD-oriented Web interface from the following model representation.
+
+Requirements:
+
+* Use HTML5.
+* Use Bootstrap 5.
+* Use vanilla JavaScript only.
+* Generate a form for each entity in the model.
+* Represent every entity attribute with an appropriate HTML form control whenever the attribute is intended to be user-editable.
+* Use HTML input types that preserve the attribute type semantics whenever an appropriate HTML input type exists.
+* A textual attribute may be represented using either `input type="text"` or `textarea` when appropriate.
+* Represent enumeration attributes using `select`, radio buttons, or checkboxes as appropriate to their cardinality.
+* Preserve all enumeration literal values in the generated controls.
+* Represent associations between entities using appropriate form controls.
+- For each entity form, set the form `id` exactly to `<EntityName>_form`.
+
+- For every model attribute represented by a single form control:
+  - set the control `name` exactly to `<AttributeName>`;
+  - set the control `id` exactly to `<EntityName>_<AttributeName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches the control `id`.
+
+- When an enumeration is represented using radio buttons or checkboxes:
+  - set every control `name` exactly to `<AttributeName>`;
+  - set every control `id` exactly to `<EntityName>_<AttributeName>_<LiteralName>`;
+  - set every control `value` exactly to `<LiteralName>`;
+  - provide a corresponding `label` whose `for` attribute exactly matches that control `id`.
+
+- When an enumeration is represented using a `select` element:
+  - set the `select` `name` exactly to `<AttributeName>`;
+  - set the `select` `id` exactly to `<EntityName>_<AttributeName>`;
+  - set each option `value` exactly to its enumeration literal name.
+* Preserve entity and attribute names from the model. Do not rename them.
+* The generated HTML must be executable as a standalone Web interface.
+* Do not use external JavaScript frameworks or libraries other than Bootstrap 5.
+* Do not invent entities, attributes, enumeration literals, or associations that are not present in the supplied model representation.
+
+Output executable code only.
+
+Return:
+
+1. Exactly one complete HTML block enclosed in ```html for `index.html`.
+2. If JavaScript is needed, return at most one JavaScript block enclosed in ```javascript for `script.js`.
+3. If additional CSS is needed, return at most one CSS block enclosed in ```css for `style.css`.
+
+The HTML block is mandatory.
+JavaScript and CSS blocks are optional and should only be included when needed.
+
+If a JavaScript block is provided, the HTML must reference `script.js`.
+If a CSS block is provided, the HTML must reference `style.css`.
+
+Do not include filenames outside the code blocks.
+Do not include explanations, Markdown headings, or any other text outside the code blocks.
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_chRz0Gu9EfG4EZpb5KR2wg" name="uml8">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_cic4gGu9EfG4EZpb5KR2wg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_magiwGu9EfG4EZpb5KR2wg" name="Employee">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qSWXAGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rKsUQGu9EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rN_f4Gu9EfG4EZpb5KR2wg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_s9qtwGu9EfG4EZpb5KR2wg" name="salary">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloatObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_t4qWYGu9EfG4EZpb5KR2wg" name="hireDate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nQqHoGu9EfG4EZpb5KR2wg" name="Department">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1lVuMGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2VSkcGu9EfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3CeakGu9EfG4EZpb5KR2wg" name="location">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oEle8Gu9EfG4EZpb5KR2wg" name="Position">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_7GtFAGu9EfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_74Ih8Gu9EfG4EZpb5KR2wg" name="title">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8lCrQGu9EfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KA2wIGu-EfG4EZpb5KR2wg" memberEnd="_KA4lUGu-EfG4EZpb5KR2wg _KA5MYGu-EfG4EZpb5KR2wg" navigableOwnedEnd="_KA5MYGu-EfG4EZpb5KR2wg _KA4lUGu-EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KA3-QGu-EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KA3-QWu-EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KA4lUGu-EfG4EZpb5KR2wg" name="employees" type="_magiwGu9EfG4EZpb5KR2wg" association="_KA2wIGu-EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MwgNQGu-EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mwg0UGu-EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KA5MYGu-EfG4EZpb5KR2wg" name="department" type="_nQqHoGu9EfG4EZpb5KR2wg" association="_KA2wIGu-EfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PQVFsGu-EfG4EZpb5KR2wg" memberEnd="_PQVswmu-EfG4EZpb5KR2wg _PQWT0Gu-EfG4EZpb5KR2wg" navigableOwnedEnd="_PQVswmu-EfG4EZpb5KR2wg _PQWT0Gu-EfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PQVswGu-EfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PQVswWu-EfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQVswmu-EfG4EZpb5KR2wg" name="position" type="_oEle8Gu9EfG4EZpb5KR2wg" association="_PQVFsGu-EfG4EZpb5KR2wg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQWT0Gu-EfG4EZpb5KR2wg" name="employees" type="_magiwGu9EfG4EZpb5KR2wg" association="_PQVFsGu-EfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UQZGQGu-EfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UQZGQWu-EfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

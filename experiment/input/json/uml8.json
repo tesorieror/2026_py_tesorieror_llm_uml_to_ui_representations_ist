@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml8",
+  "type": "object",
+  "properties": {
+	"positions": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Position"}
+    },
+	"employees": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Employee"}
+    },
+	"departments": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Department"}
+    }
+  },
+  "required":["positions", "employees", "departments"],  
+  "$defs": {
+
+    "Position":{
+      "type":"object",
+      "properties":{
+        	"description":	{ "type": "string" },
+        	"title":	{ "type": "string" },
+        	"id":	{ "type": "string" },
+        	"employees":{"type":"array", "items": { "$ref": "#/$defs/Employee" } }      
+      }, 
+      "required":["description","title","id"]	  
+    },
+    "Employee":{
+      "type":"object",
+      "properties":{
+        	"position":{ "$ref": "#/$defs/Position" },
+        	"salary":	{ "type": "number"},
+        	"department":{ "$ref": "#/$defs/Department" },
+        	"hireDate":	{ "type": "string", "format": "date-time" },
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["position","salary","department","hireDate","name","email","id"]	  
+    },
+    "Department":{
+      "type":"object",
+      "properties":{
+        	"id":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"employees":{"type":"array", "items": { "$ref": "#/$defs/Employee" } },
+        	"location":	{ "type": "string" }      
+      }, 
+      "required":["id","name","location"]	  
+    } 
+  }
+}

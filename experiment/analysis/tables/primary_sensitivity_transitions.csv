@@ -1,0 +1,11 @@
+pattern_transition,n_contrasts
+above_zero -> above_zero,32
+contains_zero -> contains_zero,24
+descriptive_only -> descriptive_only,7
+below_zero -> below_zero,6
+exact_zero -> exact_zero,4
+above_zero -> contains_zero,3
+contains_zero -> above_zero,3
+contains_zero -> below_zero,3
+below_zero -> contains_zero,1
+not_estimable -> not_estimable,1

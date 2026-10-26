@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="LoanStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active"/>
+      <xs:enumeration value="Returned"/>
+      <xs:enumeration value="Overdue"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="LoanType">
+    <xs:sequence>
+      <xs:element name="member" type="MemberType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="book" type="BookType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="returnDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="status" type="LoanStatusType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dueDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MemberType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="loans" type="LoanType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="active" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PublisherType">
+    <xs:sequence>
+      <xs:element name="country" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="books" type="BookType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BookType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="publisher" type="PublisherType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="categories" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="year" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="author" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="loans" type="LoanType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="isbn" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

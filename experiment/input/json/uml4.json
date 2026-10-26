@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml4",
+  "type": "object",
+  "properties": {
+	"loans": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Loan"}
+    },
+	"members": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Member"}
+    },
+	"books": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Book"}
+    },
+	"publishers": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Publisher"}
+    }
+  },
+  "required":["loans", "members", "books", "publishers"],  
+  "$defs": {
+    "LoanStatus":{
+      "type":"string",
+      "enum":["Active", "Returned", "Overdue"]
+    },
+    "Loan":{
+      "type":"object",
+      "properties":{
+        	"book":{ "$ref": "#/$defs/Book" },
+        	"returnDate":	{ "type": "string", "format": "date-time" },
+        	"status":{ "$ref": "#/$defs/LoanStatus" },
+        	"member":{ "$ref": "#/$defs/Member" },
+        	"startDate":	{ "type": "string", "format": "date-time" },
+        	"dueDate":	{ "type": "string", "format": "date-time" }      
+      }, 
+      "required":["book","returnDate","status","member","startDate","dueDate"]	  
+    },
+    "Member":{
+      "type":"object",
+      "properties":{
+        	"active":	{ "type": "boolean"},
+        	"name":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"loans":{"type":"array", "items": { "$ref": "#/$defs/Loan" } },
+        	"id":	{ "type": "string" }      
+      }, 
+      "required":["active","name","email","id"]	  
+    },
+    "Book":{
+      "type":"object",
+      "properties":{
+        	"publisher":{ "$ref": "#/$defs/Publisher" },
+        	"year":	{ "type": "integer"},
+        	"loans":{"type":"array", "items": { "$ref": "#/$defs/Loan" } },
+        	"categories":{"type":"array", "items": 	{ "type": "string" } },
+        	"title":	{ "type": "string" },
+        	"author":	{ "type": "string" },
+        	"isbn":	{ "type": "string" }      
+      }, 
+      "required":["publisher","year","title","author","isbn"]	  
+    },
+    "Publisher":{
+      "type":"object",
+      "properties":{
+        	"country":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"books":{"type":"array", "items": { "$ref": "#/$defs/Book" } }      
+      }, 
+      "required":["country","name"]	  
+    } 
+  }
+}

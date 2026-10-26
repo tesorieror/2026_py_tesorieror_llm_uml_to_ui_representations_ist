@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="TaskStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ToDo"/>
+      <xs:enumeration value="InProgress"/>
+      <xs:enumeration value="Done"/>
+      <xs:enumeration value="Blocked"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PriorityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Low"/>
+      <xs:enumeration value="Medium"/>
+      <xs:enumeration value="High"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ProjectType">
+    <xs:sequence>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="tasks" type="TaskType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TaskType">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="priority" type="PriorityType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dueDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="project" type="ProjectType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="comments" type="CommentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="employees" type="EmployeeType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="status" type="TaskStatusType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CommentType">
+    <xs:sequence>
+      <xs:element name="text" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="task" type="TaskType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EmployeeType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="tasks" type="TaskType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

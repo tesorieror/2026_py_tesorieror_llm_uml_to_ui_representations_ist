@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "uml10",
+  "type": "object",
+  "properties": {
+	"tasks": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Task"}
+    },
+	"comments": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Comment"}
+    },
+	"projects": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Project"}
+    },
+	"employees": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/Employee"}
+    }
+  },
+  "required":["tasks", "comments", "projects", "employees"],  
+  "$defs": {
+    "TaskStatus":{
+      "type":"string",
+      "enum":["ToDo", "InProgress", "Done", "Blocked"]
+    },
+    "Priority":{
+      "type":"string",
+      "enum":["Low", "Medium", "High"]
+    },
+    "Task":{
+      "type":"object",
+      "properties":{
+        	"title":	{ "type": "string" },
+        	"priority":{ "$ref": "#/$defs/Priority" },
+        	"dueDate":	{ "type": "string", "format": "date-time" },
+        	"status":{ "$ref": "#/$defs/TaskStatus" },
+        	"employees":{"type":"array", "items": { "$ref": "#/$defs/Employee" } },
+        	"description":	{ "type": "string" },
+        	"project":{ "$ref": "#/$defs/Project" },
+        	"comments":{"type":"array", "items": { "$ref": "#/$defs/Comment" } }      
+      }, 
+      "required":["title","priority","dueDate","status","description","project"]	  
+    },
+    "Comment":{
+      "type":"object",
+      "properties":{
+        	"task":{ "$ref": "#/$defs/Task" },
+        	"text":	{ "type": "string" },
+        	"date":	{ "type": "string", "format": "date-time" }      
+      }, 
+      "required":["task","text","date"]	  
+    },
+    "Project":{
+      "type":"object",
+      "properties":{
+        	"endDate":	{ "type": "string", "format": "date-time" },
+        	"description":	{ "type": "string" },
+        	"startDate":	{ "type": "string", "format": "date-time" },
+        	"name":	{ "type": "string" },
+        	"tasks":{"type":"array", "items": { "$ref": "#/$defs/Task" } }      
+      }, 
+      "required":["description","startDate","name"]	  
+    },
+    "Employee":{
+      "type":"object",
+      "properties":{
+        	"id":	{ "type": "string" },
+        	"email":	{ "type": "string" },
+        	"name":	{ "type": "string" },
+        	"tasks":{"type":"array", "items": { "$ref": "#/$defs/Task" } }      
+      }, 
+      "required":["id","email","name"]	  
+    } 
+  }
+}

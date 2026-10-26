@@ -1,0 +1,6 @@
+The system manages orders and customers.
+
+Each order has exactly one date, has exactly one total, and has exactly one status. The status can be Pending, Paid, and Cancelled. 
+Each order also has exactly one customer. 
+Each customer is identified by an identifier, defines whether the customer is vip, and has exactly one name. 
+Each customer also may have one or more orders. 

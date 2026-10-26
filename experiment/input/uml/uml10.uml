@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_g6mnsGvBEfG4EZpb5KR2wg" name="uml10">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_g7xsYGvBEfG4EZpb5KR2wg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ih4HgGvBEfG4EZpb5KR2wg" name="Project">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_nUceoGvBEfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oeblgGvBEfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pffZ4GvBEfG4EZpb5KR2wg" name="startDate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qdFqkGvBEfG4EZpb5KR2wg" name="endDate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vSlZ4GvBEfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vSodMGvBEfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jSPNcGvBEfG4EZpb5KR2wg" name="Task">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_UgQqEGvFEfG4EZpb5KR2wg" name="title">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VaD_4GvFEfG4EZpb5KR2wg" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_WSMhwGvFEfG4EZpb5KR2wg" name="dueDate" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XbUF8GvFEfG4EZpb5KR2wg" name="status" type="_ttbLMGvHEfG4EZpb5KR2wg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mR-GQGvHEfG4EZpb5KR2wg" name="priority" type="_ofmbcGvHEfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_j53OIGvBEfG4EZpb5KR2wg" name="Employee">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PeVg8GvIEfG4EZpb5KR2wg" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QTDicGvIEfG4EZpb5KR2wg" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Q0mJQGvIEfG4EZpb5KR2wg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lcAWUGvBEfG4EZpb5KR2wg" name="Comment">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_aNcH8GvIEfG4EZpb5KR2wg" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_a5WywGvIEfG4EZpb5KR2wg" name="text">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ofmbcGvHEfG4EZpb5KR2wg" name="Priority">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pYqxcGvHEfG4EZpb5KR2wg" name="Low"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pyb8UGvHEfG4EZpb5KR2wg" name="Medium"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qMh3UGvHEfG4EZpb5KR2wg" name="High"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ttbLMGvHEfG4EZpb5KR2wg" name="TaskStatus">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vuY9YGvHEfG4EZpb5KR2wg" name="ToDo"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wwesgGvHEfG4EZpb5KR2wg" name="InProgress"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xqe2oGvHEfG4EZpb5KR2wg" name="Done"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yHSucGvHEfG4EZpb5KR2wg" name="Blocked"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_31jRwGvHEfG4EZpb5KR2wg" memberEnd="_31lG8mvHEfG4EZpb5KR2wg _31luAGvHEfG4EZpb5KR2wg" navigableOwnedEnd="_31lG8mvHEfG4EZpb5KR2wg _31luAGvHEfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_31lG8GvHEfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_31lG8WvHEfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_31lG8mvHEfG4EZpb5KR2wg" name="tasks" type="_jSPNcGvBEfG4EZpb5KR2wg" association="_31jRwGvHEfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AzePAGvIEfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Aze2EGvIEfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_31luAGvHEfG4EZpb5KR2wg" name="project" type="_ih4HgGvBEfG4EZpb5KR2wg" association="_31jRwGvHEfG4EZpb5KR2wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Gc-1MGvIEfG4EZpb5KR2wg" memberEnd="_GdADUmvIEfG4EZpb5KR2wg _GdAqYGvIEfG4EZpb5KR2wg" navigableOwnedEnd="_GdADUmvIEfG4EZpb5KR2wg _GdAqYGvIEfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GdADUGvIEfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GdADUWvIEfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GdADUmvIEfG4EZpb5KR2wg" name="tasks" type="_jSPNcGvBEfG4EZpb5KR2wg" association="_Gc-1MGvIEfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JUOvIGvIEfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JUOvIWvIEfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GdAqYGvIEfG4EZpb5KR2wg" name="employees" type="_j53OIGvBEfG4EZpb5KR2wg" association="_Gc-1MGvIEfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J2STUGvIEfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J2STUWvIEfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZhmY0GvMEfG4EZpb5KR2wg" memberEnd="_ZhoOAmvMEfG4EZpb5KR2wg _ZhoOA2vMEfG4EZpb5KR2wg" navigableOwnedEnd="_ZhoOA2vMEfG4EZpb5KR2wg _ZhoOAmvMEfG4EZpb5KR2wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZhoOAGvMEfG4EZpb5KR2wg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZhoOAWvMEfG4EZpb5KR2wg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZhoOAmvMEfG4EZpb5KR2wg" name="comments" type="_lcAWUGvBEfG4EZpb5KR2wg" association="_ZhmY0GvMEfG4EZpb5KR2wg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bCzF0GvMEfG4EZpb5KR2wg" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bCzF0WvMEfG4EZpb5KR2wg" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZhoOA2vMEfG4EZpb5KR2wg" name="task" type="_jSPNcGvBEfG4EZpb5KR2wg" association="_ZhmY0GvMEfG4EZpb5KR2wg"/>
+  </packagedElement>
+</uml:Model>
