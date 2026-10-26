@@ -55,5 +55,5 @@ All 5,979 scientific entries were verified after ZIP creation.
 - Original calculations were not rerun during packaging.
 - A wheel build and basic import test succeeded.
 - Independent end-to-end replication has not been established.
-- The two archives have not yet been deposited in Zenodo.
-- Public repository creation and persistent identifiers remain pending.
+- Both archives have been uploaded to an unpublished Zenodo draft; their displayed MD5 checksums matched the corresponding local files.
+- The GitHub repository exists but remains private; the Zenodo DOI is reserved and is not yet a publicly resolvable identifier.

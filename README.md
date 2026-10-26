@@ -25,7 +25,7 @@ The replication materials are divided between this source package and two separa
 
 The public package does not contain the original LLM responses, extracted generated code, or NetCDF artifacts.
 
-### Generation outputs archive (Zenodo, pending deposit)
+### Generation outputs archive (Zenodo, uploaded to unpublished draft)
 
 `ist_generation_outputs.zip` contains:
 
@@ -36,7 +36,7 @@ The public package does not contain the original LLM responses, extracted genera
 Archive SHA-256:
 `4d5291ccc4baddf51a63f45446b4d6456867de773178ee991bd170bdee58ae96`
 
-### NetCDF analysis archive (Zenodo, pending deposit)
+### NetCDF analysis archive (Zenodo, uploaded to unpublished draft)
 
 `ist_netcdf_artifacts.zip` contains 18 NetCDF artifacts and `netcdf_manifest.csv`, preserving the original relative file paths.
 
