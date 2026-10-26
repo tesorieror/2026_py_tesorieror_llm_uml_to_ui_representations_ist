@@ -21,7 +21,7 @@ The replication materials are divided between this source package and two separa
 - `experiment/metrics/`: evaluation materials.
 - `experiment/analysis/`: included analytical files, excluding NetCDF artifacts.
 - `src/es_uclm_iseresearch_uml_to_ui/`: Python research code.
-- `SHA256SUMS_PUBLIC.txt`: hashes for the 3,178 files in the verified public package before this documentation update.
+- `SHA256SUMS_PUBLIC.txt`: hashes for the 3,177 files in the public package before adding the Zenodo deposit status document.
 
 The public package does not contain the original LLM responses, extracted generated code, or NetCDF artifacts.
 
@@ -49,7 +49,7 @@ After obtaining both published archives, extract each ZIP into the root of a che
 
 The ZIP entries preserve their original `experiment/...` paths. Extraction restores the corresponding directories alongside the source package. Verify each ZIP against the SHA-256 above and use its internal manifest to check extracted files.
 
-No download URL or Zenodo DOI is provided yet because neither archive has been deposited.
+Zenodo DOI reserved: `10.5281/zenodo.23668583`. The deposit remains a draft; the DOI is not yet registered or publicly resolvable. See `ZENODO_DEPOSIT_STATUS.md`.
 
 ## Environment and limitations
 
@@ -71,4 +71,4 @@ See `LICENSE_POLICY.md` for the distinct software and research-material licenses
 
 ## Publication status
 
-This is a pre-publication package. The public GitHub repository, Zenodo deposits, persistent identifiers, and final manuscript links are pending.
+This repository is currently private. A Zenodo DOI has been reserved, but the dataset remains unpublished. Public release and final manuscript links remain pending.
