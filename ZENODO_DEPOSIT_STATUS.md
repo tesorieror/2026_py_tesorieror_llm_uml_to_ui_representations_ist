@@ -4,7 +4,7 @@
 
 DOI: 10.5281/zenodo.23668583
 
-Status: RESERVED ? NOT YET PUBLISHED
+Status: PUBLISHED
 
 This DOI has been reserved for the Zenodo dataset containing:
 
@@ -18,13 +18,13 @@ MD5 checksums matched the corresponding local files.
 
 ## Important limitations
 
-The Zenodo record remains an unpublished draft.
-The reserved DOI is not yet a registered, resolvable public DOI.
+The Zenodo record has been published.
+The dataset is available at https://doi.org/10.5281/zenodo.23668583.
 
-Do not describe this dataset as publicly available until the
-Zenodo record has been published and its DOI verified.
+The depositor confirmed that the Zenodo record is published and
+that its DOI resolves correctly.
 
-The companion GitHub repository remains private during
-pre-publication preparation.
+The companion GitHub repository is public following
+completion of publication preparation.
 
 The research experiments have not been independently rerun.

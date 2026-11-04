@@ -48,10 +48,10 @@ rights holder has the necessary authorization.
 Any identified third-party materials remain subject to their
 own applicable licenses and attribution requirements.
 
-Both Zenodo archives are intended to use the research-material
-license described above, subject to the final deposit review.
+Both Zenodo archives use the research-material
+license described above, subject to third-party rights.
 
 ## Publication status
 
 The license files and software metadata have been prepared.
-The public release and Zenodo deposits remain pending.
+The replication repository and Zenodo dataset are published.
